@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'content' %}
+<br><br><br><br><br><br>
+<form method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <button type="submit">ذخیره</button>
+</form>
+{% endblock 'content' %}
