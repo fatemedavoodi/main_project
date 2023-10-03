@@ -12,8 +12,8 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Get a Quote</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h2>درخواست همکاری</h2>
+              <p></p>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'root:home' %}">Home</a></li>
             <li>Get a Quote</li>
           </ol>
         </div>
@@ -37,53 +37,51 @@
           <div class="col-lg-5 quote-bg" style="background-image: url({% static 'assets/img/quote-bg.jpg' %});"></div>
 
           <div class="col-lg-7">
-            <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
+            <form action="" method="post">
+              {% csrf_token %}
+              <h3>فرم استعلام نرخ</h3>
               <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required>
+                  <input type="text" name="departure" class="form-control" placeholder="مبدا" required>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required>
+                  <input type="text" name="delivery" class="form-control" placeholder="مقصد" required>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required>
+                  <input type="text" name="weight" class="form-control" placeholder="وزن کلی(kg)" required>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required>
+                  <input type="text" name="dimensions" class="form-control" placeholder="اندازه (cm)" required>
                 </div>
 
                 <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
+                  <h4>فرم اطلاعات شخصی</h4>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required>
+                  <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی" required>
                 </div>
 
                 <div class="col-md-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="ایمیل" required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+                  <input type="text" class="form-control" name="phone" placeholder="تلفن" required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="پیام" required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
 
-                  <button type="submit">Get a quote</button>
+                  <button type="submit">ارسال درخواست</button>
                 </div>
 
               </div>

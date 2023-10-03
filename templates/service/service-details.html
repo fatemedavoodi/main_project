@@ -21,7 +21,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'root:home' %}">Home</a></li>
             <li>Service Details</li>
           </ol>
         </div>
@@ -44,9 +44,7 @@
               <a href="#">Warehousing</a>
             </div>
 
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
-          </div>
+            
 
           <div class="col-lg-8">
             <img src="{% static 'assets/img/service-details.jpg' %}" alt="" class="img-fluid services-img">
