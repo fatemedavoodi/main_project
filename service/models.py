@@ -1,7 +1,9 @@
 from django.db import models
+from root.models import Category
 
 class Services(models.Model):
     title = models.CharField(max_length=100)
+    category = models.ManyToManyField(Category)
     content1 = models.TextField()
     content2 = models.TextField()
     content3 = models.TextField()
@@ -16,3 +18,11 @@ class Services(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        ordering = ('created_date',)
+
+    def snip(self):
+        return self.content1[:20]+'...'
+    
+    def capt(self):
+        return self.title.capitalize()
