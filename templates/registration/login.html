@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>login</title>
     <style>
        body{background-image: linear-gradient(to right,#151542,purple);}
-       .login-box{width: 320px;height: 420px;background: rgba(240, 234, 234, 0.5);color: #fff;top: 50%;left: 50%;position: absolute;
+       .login-box{width: 320px;height: 465px;background: rgba(240, 234, 234, 0.5);color: #fff;top: 50%;left: 50%;position: absolute;
                 transform: translate(-50%,-50%);box-sizing: border-box;padding: 70px 30px;}
         h1{margin: 0;padding: 0 0 20px;text-align: center;font-size: 22px;}
         .login-box p{margin: 0;padding: 0;font-weight: bold;}
@@ -29,7 +29,9 @@
         <p>رمزعبور</p>
         <input type="password" name="password">
         <input type="submit" name="submit" value="Login" >
-        <a href="">رمزعبور خود را فراموش کرده اید؟</a>
+        {{captcha}}
+        <a href="{% url 'root:home'%}">برگشت به صفحه اصلی</a>
+        <br>
         {% if messages %}
         {% for message in messages %}
             {{message}}

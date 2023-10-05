@@ -22,7 +22,7 @@
 
             <div class="col-lg-3 col-6">
               <div class="stats-item text-center w-100 h-100">
-                <span data-purecounter-start="0" data-purecounter-end={{client_count}} data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end={{user_count}} data-purecounter-duration="1" class="purecounter"></span>
                 <p>مشتریان</p>
               </div>
             </div><!-- End Stats Item -->
@@ -59,14 +59,14 @@
       <div class="container">
 
         <div class="row gy-4">
-          {% for sr in service %}
+          {% for ths in three_service %}
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
             <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
             <div>
-              <h4 class="title">{{sr.title}}</h4>
+              <h4 class="title">{{ths.title}}</h4>
               
-              <p class="description">{{sr.snip}}</p>
-              <a href="{% url 'service:service_detail' id=sr.id %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <p class="description">{{ths.snip}}</p>
+              <a href="{% url 'service:service_detail' id=ths.id %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           {% endfor %}

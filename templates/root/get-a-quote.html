@@ -40,7 +40,7 @@
             <form action="" method="post">
               {% csrf_token %}
               <h3>فرم استعلام نرخ</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+              
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -83,7 +83,11 @@
 
                   <button type="submit">ارسال درخواست</button>
                 </div>
-
+                {% if messages %}
+                {% for message in messages %}
+                  <p style='color:green'>{{ message}}</p>
+                {% endfor %}
+              {% endif %}
               </div>
             </form>
           </div><!-- End Quote Form -->

@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block 'content' %}
 {% load static %}
+
 {% block 'title' %}about{% endblock 'title' %}
 
   <main id="main">
@@ -20,7 +21,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="{% url 'root:home' %}">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li>About</li>
           </ol>
         </div>
@@ -71,6 +72,7 @@
       </div>
     </section><!-- End About Us Section -->
 
+
     <!-- ======= Stats Counter Section ======= -->
     <section id="stats-counter" class="stats-counter pt-0">
       <div class="container" data-aos="fade-up">
@@ -79,7 +81,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end={{client_count}} data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end={{user_count}} data-purecounter-duration="1" class="purecounter"></span>
               <p>مشتریان</p>
             </div>
           </div><!-- End Stats Item -->
@@ -98,6 +100,7 @@
             </div>
           </div><!-- End Stats Item -->
 
+
         </div>
 
       </div>
@@ -108,34 +111,36 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <span>Our Team</span>
-          <h2>Our Team</h2>
+          <span>تیم ما</span>
+          <h2>تیم ما</h2>
 
         </div>
-
+        
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-          {% for team in team_member %}
+          {% for teams in team_member %}
           <div class="col-lg-4 col-md-6 d-flex">
             <div class="member">
-              <img src={{team.image.url}} class="img-fluid" alt="">
+              <img src={{teams.image.url}} class="img-fluid" alt="">
               <div class="member-content">
-                <h4>{{team.info.username}}</h4>
-                {% for sk in team.skills.all %}
+                <h4>{{teams.info.username}}</h4>
+                {% for sk in teams.skills.all %}
                 <span>{{sk.name}}</span>
                 {% endfor %}
                 <p>
-                  {{team.description}}
+                  {{teams.descriptions}}
                 </p>
                 <div class="social">
-                  <a href={{team.twitter}}><i class="bi bi-twitter"></i></a>
-                  <a href={{team.facebook}}><i class="bi bi-facebook"></i></a>
-                  <a href={{team.instagram}}><i class="bi bi-instagram"></i></a>
-                  <a href={{team.linkdin}}><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
-            {% endfor %}
-          </div><!-- End Team Member -->
+          </div>
+          {% endfor %}
+          <!-- End Team Member -->
+
 
 
         </div>
@@ -230,15 +235,5 @@
                   </div>
                 </div>
               </div><!-- # Faq item-->
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
   </main><!-- End #main -->
-
 {% endblock 'content' %}
