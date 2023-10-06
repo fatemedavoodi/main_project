@@ -6,6 +6,7 @@ django-jazzmin==2.6.0
 django-ranged-response==0.2.0
 django-robots==6.1
 django-simple-captcha==0.5.20
+mysqlclient==2.2.0
 Pillow==10.0.1
 rcssmin==1.1.1
 rjsmin==1.2.1

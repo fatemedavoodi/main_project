@@ -20,9 +20,11 @@ def service(request,cat=None):
 
 def service_detail(request,id):
     try:
+        category = Category.objects.all()
         service = Services.objects.get(id=id)
         context={
             'service': service,
+            'category': category,
         }
         
         return render(request,'service/service-details.html',context=context)

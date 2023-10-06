@@ -60,7 +60,7 @@ def contact(request):
             form.save()
             messages.add_message(request,messages.SUCCESS,'we recieved your message')
             return redirect('root:contact')
-    else:
+        else:
             messages.add_message(request,messages.ERROR,'Invalid data')
             return redirect('root:contact')
 
@@ -75,15 +75,15 @@ def request(request):
     if request.method == 'GET':
         category = Category.objects.all()
         context={
-            'category': category,
+            'category':category,
         }
-        return render(request,'root/get-a-quote.html',context=context)
+        return render(request,"root/contact.html",context=context)
     elif request.method == 'POST':
         form = RequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request,messages.SUCCESS,'we recieved your message we call you')
-            return redirect('root:request')
+            messages.add_message(request,messages.SUCCESS,'we recieved your message')
+            return redirect('root:contact')
         else:
             messages.add_message(request,messages.ERROR,'Invalid data')
-            return redirect('root:request')
+            return redirect('root:contact')
