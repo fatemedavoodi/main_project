@@ -1,11 +1,9 @@
 from config.settings import *
 
-SECRET_KEY = 'django-insecure-(5#nlrsms#c1$pczb$)1#m%ugf)ragb!6zp9ydf4yd#i^-p^3='
+SECRET_KEY = 'django-insecure-fn9&719gwc(cm$2f0s(w_-do&p^cyje%4l-ig#lhr6wm-oxnnz'
 DEBUG = False
-ALLOWED_HOSTS = ['projectdjango.ir','www.projectdjango.ir'] 
 
-
-
+ALLOWED_HOSTS = ['projectdjango.ir','www.projectdjango.ir']
 
 DATABASES = {
     'default': {
@@ -18,12 +16,12 @@ DATABASES = {
     }
 }
 
+
 #STATIC_ROOT = BASE_DIR/'/static'
 #MEDIA_ROOT = BASE_DIR/'media'
 
 
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'mail.projectdjango.ir'
 EMAIL_USE_TLS = True
@@ -31,6 +29,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'admin@projectdjango.ir'
 EMAIL_HOST_PASSWORD = '096165976Fd*'
 DEFAULT_FROM_EMAIL = 'admin@projectdjango.ir'
+
 
 
 CSRF_COOKIE_SECURE = True

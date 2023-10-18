@@ -77,13 +77,13 @@ def request(request):
         context={
             'category':category,
         }
-        return render(request,"root/contact.html",context=context)
+        return render(request,"root/get-a-quote.html",context=context)
     elif request.method == 'POST':
         form = RequestForm(request.POST)
         if form.is_valid():
             form.save()
             messages.add_message(request,messages.SUCCESS,'we recieved your message')
-            return redirect('root:contact')
+            return redirect('root:request')
         else:
             messages.add_message(request,messages.ERROR,'Invalid data')
-            return redirect('root:contact')
+            return redirect('root:request')

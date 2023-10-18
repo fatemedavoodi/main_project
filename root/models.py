@@ -63,10 +63,10 @@ class ContactUs(models.Model):
     
 
 class Request(models.Model):
-    city_departure = models.CharField(max_length=100)
-    delivery_city = models.CharField(max_length=100)
-    total_weight = models.IntegerField()
-    dimensions = models.IntegerField()
+    departure = models.CharField(max_length=100)
+    delivery = models.CharField(max_length=100)
+    weight = models.CharField(max_length=30)
+    dimensions = models.CharField(max_length=30)
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)

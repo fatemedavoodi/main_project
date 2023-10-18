@@ -11,4 +11,4 @@ class RequestForm(forms.ModelForm):
 
     class Meta:
         model = Request
-        fields = ['city_departure','delivery_city','total_weight','dimensions','name','email','phone','message']
+        fields = ['departure','delivery','weight','dimensions','name','email','phone','message']
