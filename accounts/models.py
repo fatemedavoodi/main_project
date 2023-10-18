@@ -40,10 +40,10 @@ class CustomeUser(AbstractBaseUser, PermissionsMixin):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
-    USERNAME_FIELD = 'mobile'
+    USERNAME_FIELD = 'id_code'
     REQUIRED_FIELDS = []
 
     objects = CustomeBaseUserManager()
 
     def __str__(self):
-        return self.mobile
+        return self.id_code
